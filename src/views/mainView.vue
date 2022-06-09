@@ -161,6 +161,12 @@ export default {
     message: false,
     hints: true,
 Links: [
+   { 
+  title: 'Dashboard',
+  icon: 'mdi-acount-check',
+  to: '/dashboard',
+    sublinks: []
+ },
  { 
   title: 'Customers',
   icon: 'mdi-account-check',
