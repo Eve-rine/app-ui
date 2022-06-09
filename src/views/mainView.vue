@@ -118,28 +118,7 @@
         v-if="$vuetify.breakpoint.mdAndUp"
         @click="mini = !mini"
       ></v-app-bar-nav-icon>
-      <!--      <DashboardBreadcrumb />-->
       <v-spacer class="spacer" sm="0" />
-
-      <!-- <v-menu v-if="actions.length > 1" offset-y>
-        <template v-slot:activator="{ on, attrs }">
-          <v-btn v-bind="attrs" color="warning" outlined v-on="on">
-            <v-icon left>mdi-alert</v-icon>
-            {{ actions.length }} actions Needs your attention
-          </v-btn>
-        </template>
-        <v-list dense tile>
-          <v-list-item v-for="(action, i) in actions" :key="i" :to="action.to">
-            <v-list-item-title>
-              <v-icon left :color="action.color || 'warning'">{{
-                action.icon
-              }}</v-icon>
-              {{ action.name }}
-            </v-list-item-title>
-          </v-list-item>
-        </v-list>
-      </v-menu> -->
-
       <v-btn rounded icon @click="$vuetify.theme.dark = !$vuetify.theme.dark">
         <v-icon>mdi-theme-light-dark</v-icon>
       </v-btn>
@@ -148,13 +127,6 @@
           <v-btn
             v-bind="attrs"
             v-on="on"
-            @click="
-              $vuetify.breakpoint.mdAndUp
-                ? (leftDrawer = !leftDrawer)
-                : $router.push({ name: 'Notifications' })
-            "
-            rounded
-            icon
           >
             <v-badge :content="1" :value="1" color="red" overlap dot>
               <v-icon>mdi-newspaper</v-icon>
@@ -163,9 +135,6 @@
         </template>
         <span>Notice Board</span>
       </v-tooltip>
-      <!--BEGIN profile-->
-      <AccountProfileDropdown :menus="menus" />
-      <!--END profile dropdown-->
     </v-app-bar>
 
     <v-divider />
@@ -173,27 +142,6 @@
 
     <v-main class="background">
           <router-view />
-      <!-- <v-row class="fill-height" :no-gutters="leftDrawer">
-        <v-col :cols="leftDrawer ? '9' : '12'">
-          <router-view class="py-5" />
-        </v-col>
-        <v-col :cols="leftDrawer ? '3' : '0'">
-          <v-card v-if="leftDrawer" tile elevation="0" class="fill-height">
-            <v-card-title class="overline">
-              Notice Board
-
-              <v-spacer />
-
-              <v-btn small icon @click="leftDrawer = !leftDrawer">
-                <v-icon> mdi-close </v-icon>
-              </v-btn>
-            </v-card-title>
-            <v-divider />
-
-            <info-section />
-          </v-card>
-        </v-col>
-      </v-row> -->
     </v-main>
   </v-app>
 </template>
@@ -239,7 +187,7 @@ Links: [
     {
       title: 'Dispatched',
       icon: 'mdi-playlist-edit',
-      to: '/orders/delivered',
+      to: '/orders/dispatched',
       enable: true
     },
     {
@@ -269,7 +217,7 @@ Links: [
     {
       title: 'On Transit',
       icon: 'mdi-account-multiple',
-      to: '/orders/loading',
+      to: '/orders/on-transit',
       enable: true
     }
     ]}

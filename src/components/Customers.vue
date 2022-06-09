@@ -2,17 +2,16 @@
   <v-container>
     <v-card flat>
       <v-card-title>
-        <v-btn text small @click="$router.back()">
+        <!-- <v-btn text small @click="$router.back()">
           <v-icon left> mdi-arrow-left </v-icon>
           Back
-        </v-btn>
+        </v-btn> -->
         <v-spacer />
         <div class="ma-2">
           <v-btn
             class="indigo white--text"
             :to="{
               name: 'Add Customer',
-              params: { code: base64Param },
             }"
           >
             <v-icon class="mr-2">mdi-plus</v-icon>Add Customer
@@ -54,7 +53,6 @@
               <v-list>
                 <v-list-item
                   @click="removeItem(item)"
-                  v-if="item.postedReceiptNo.length === 0"
                 >
                   <v-icon color="error" size="">mdi-delete</v-icon>
                   Remove
